@@ -30,5 +30,5 @@ async def '''nome do comando e o que ele deve fazer ''' (ctx):
 	
 	
 	
-client.run
+client.run('token')
 	
