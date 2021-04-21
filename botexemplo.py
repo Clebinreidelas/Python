@@ -16,7 +16,7 @@ bot_status = cycle(['status da sua escolha '])
 async def change_status():
     await client.change_presence(activity=discord.Game(next(bot_status)))#script lara status do bot 
     
-'''script que detecta quando um membro entra na guild(servidor) e envia uma mensagem'''
+'''bloco de codigo que detecta quando um membro entra na guild(servidor) e envia uma mensagem'''
 	
 @client.event
 async def on_member_join(member):
