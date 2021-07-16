@@ -1,6 +1,7 @@
 import discord.py
-from discord.ext import commands
+from discord.ext import commands, tasks
 from discord import errors
+from itertools import cycle 
 
 client=commands.Bot(command_prefix='!')
 # Events 
