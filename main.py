@@ -25,9 +25,8 @@ async def change_status():
 ####################################################################################################
 
 
-discord.client= discord.Client
-class MyClient(discord.client):
-    async def on_message(message):
+@bot.event
+async def on_message(message):
         if message.author == client.user:
             return
 
@@ -50,8 +49,7 @@ class MyClient(discord.client):
             await message.channel.send('bom dia gasosa')
         if message.content.startswith('bom dia'):
             await message.channel.send('olá')
-        if message.content.startswith('sté'):
-            await message.channel.send('sté  <3')
+        
     async def on_message(self, message):
         if message.author.id == self.user.id:
                 return
@@ -66,7 +64,7 @@ class MyClient(discord.client):
 
 
 client = MyClient()
-client.run('NzQ2MDk2MzQyNTE4MDcxMzY2.Xz7WXQ.tz3YIIyQz5gFZXXnmL2q-LdB1MA')
+client.run('token')
 
 
 
