@@ -2,6 +2,7 @@ import discord.py
 from discord.ext import commands, tasks
 from discord import errors
 from itertools import cycle 
+from discord import Guild
 
 client=commands.Bot(command_prefix='!')
 # Events 
@@ -16,7 +17,8 @@ bot_status = cycle(['status da sua escolha '])
 
 @tasks.loop(seconds=15)
 async def change_status():
-    await client.change_presence(activity=discord.Game(next(bot_status)))#script lara status do bot 
+    await client.change_presence(activity=discord.Game(next(bot_status)))
+	#script para mudar os  status do bot 
     
 
 	
@@ -42,7 +44,7 @@ async def avatar(ctx, user : discord.User):
 	#aqui vc seta uma imagem pela url 
 	embed.set_foother(url=ctx.author.avatar_url, text = fRequisitado por {ctx.author.name})
 	# e aqui vc consegue colocar um author na sua embed 
-	
+	await ctx.reply(ctx.author.mention, embed = embed)
 # Bem , isso aqui em baixo é simplesmente uma gambiarra que eu fiz pra funcionar caso vc não colocar o "user" na hora de executar o comando 
 
 @avatar.error
@@ -51,6 +53,29 @@ async def avatar_error(ctx, error):
 		embed = discord.embed(title = f"Avatar de {ctx.author.name}{ctx.author.discriminator}", colour = discord.Colour.green())
 		embed.set_image(url= ctx.author.avatar_url)
 		embed.set_foother(url=ctx.author.avatar_url, text = fRequisitado por {ctx.author.name})
+		
+@client.command()
+@commands.has_permissions(ban_members = True )
+async def ban(ctx, member : discord.member, reason = None ):
+	embed= discord.Embed(title = f'{member.name} Banido', color = discord.Colour.red())
+	embed.set_thumbinail(url = member.avatar_url)
+	embeb.add_field(name = "Banido por :" , value = reason
+	await member.send(f"Você foi banido pelo {ctx.author.name} por {reason})
+	await member.ban(reason = reason)
+	await ctx.send(embed = embed, delete_after = 5)
+					  
+@client.command()
+async def guild_icon(ctx, guild : discord.Guild )
+	embed = discord.Embed(title = f"Icone da guild {guild.name} ", color = discord.Colour.purple())
+	embed.set_image(url = guild.icon_url)
+	embed.set_foother(url = ctx.author.avatar_url , text = 	'Requisitado por {ctx.author.name}')
+					  
+@client.command()
+async def calc(ctx, numero_1, sinal, numero_2):
+	if sinal == '+':
+		multiplicação = numero_1 + numero_2
+		await ctx.reply(`multiplicação`)
+	# e assim por diante vou parar por aqui porque é chato ficar fazendo isso 
 		
 # Mensagens automaticas 
 
@@ -61,8 +86,10 @@ async def on_message(message):
 	
 	if message.content.startswith('Olá):
 		#isso identifica  se a ultima mensagem foi igual a "Olá"
-		await channel.send("Olá amigo")	
+		await message.channel.send("Olá amigo")	
     # envia uma mensagem 
+								  
+
 																
 																
 																
