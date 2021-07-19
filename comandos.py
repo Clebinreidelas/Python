@@ -116,6 +116,6 @@ async def avatar(ctx: commands.Context , user : discord.User):
 
 
 
-client.run('NzQ2MDk2MzQyNTE4MDcxMzY2.Xz7WXQ.tz3YIIyQz5gFZXXnmL2q-LdB1MA')
+client.run('token')
 print('cliente funcionando')
 
