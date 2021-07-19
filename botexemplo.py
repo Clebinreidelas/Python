@@ -54,6 +54,20 @@ async def avatar_error(ctx, error):
 		embed.set_image(url= ctx.author.avatar_url)
 		embed.set_foother(url=ctx.author.avatar_url, text = fRequisitado por {ctx.author.name})
 		
+		
+@client.command()
+@commands.has_permissions(kick_members = True)
+async def kick(ctx, member : discord.Member, reason = None ):
+	embed= discod.Embed(title = f"{member.name} Expulso" , color = discird.Colour.Red())
+	embed.set_thumbinail(url = member.avatar_url)
+	embeb.add_field(name = "EXpulso por :" , value = reason)
+	await member.send(f"Você foi expulso pelo {ctx.author.name} por {reason})
+	await member.kick(reason = reason)
+	await ctx.send(embed = embed, delete_after = 5)
+	
+	
+	
+		
 @client.command()
 @commands.has_permissions(ban_members = True )
 async def ban(ctx, member : discord.member, reason = None ):
