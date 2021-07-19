@@ -1,3 +1,6 @@
+"""ignore completamente esse codigo por que na epoca eu não sabia usar o discord.py"""
+
+
 import discord
 from discord.ext import commands,tasks
 import random
