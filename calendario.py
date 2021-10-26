@@ -27,6 +27,8 @@ def amanhã():
         amnha = f'''
         Amanhã = {tomorrow}
         '''
+        
+    #acho que fiz isso aqui tudo e ficou meio cagadao , acho que no final vou optar por uma API de datas , pq essa porcaria pea o horario da maquina
                
 
 
@@ -53,16 +55,29 @@ def calendario():
 janela = Tk()
 janela.title("Calendario do cleb")
 janela.geometry("380x200")
+#basicamente isso aqui cria a janela , dps da um titulo super criativo  e por ultimo seta o tamanho padrão da janela 
 
-#coisas que aparecem na tela
+##coisas que aparecem na tela 
 #texto de boas-vindas
 texto_1 = Label(janela, text= "Seja bem vindo ao calendario incrivel que o cleb montou para vc")
 texto_1.grid(column=0, row=0)
+#isso aqui vai mostrar a primeira informação quando vc abrir o calendario e onde ela vai ficar (é pra isso que todos os objetos "grid" servem )
 
 #botão para mostrar o dia 
 
 botão = Button(janela, text= "Clique aqui para ver a data de hoje" , command=calendario)
 botão.grid(column=0, row=1)
+# um botão que vai mostrar a data de hj 
+"""
+meu deus 
+meu senhor 
+me ajuda 
+por favor 
+é na escola no trabalho ou faculdade 
+tô viciado 
+no zap zap zap
+"""
+#ignore a  musica acimaakdfhdsjg rdgdnfhgyfbh
 
 #exibição do que o botão vai mostrar
 
@@ -86,14 +101,24 @@ data_amanhã.grid(column=1, row=2)
 botão_agenda= Button(janela, text="Clique aqui se quiser agendar algo de importante", command= agendamentos )
 botão_agenda.grid(column=2 , row=2)
 '''
-
+   '''isso aqui em cima  é um projeto de agendamentos que eu to fazendo , mas n sei se vai sair do papel , pq n faço ideia de como fazer essa bagaça funcionar , mas basicamente ele vai colocar tudo em um banco de dados
+   e é isso , quando chegar a hora ele simplesmente vai te avisar que vc é pra vc se lembrar que é pra fazer algo que dfjgxbjbhfj'''
+    
 janela.mainloop()
+
+
+
+
+
+''' Depois eu faço um .exe dessa bagaça e posto aqui espero que não esteja horrivel '''
+''' adeus a vc que leu todo esse incrivel programa e quer me matar por ser tão burro'''
 
 
 
 
     
 
+    
 
 
 
